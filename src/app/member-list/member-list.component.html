@@ -1,0 +1,43 @@
+<!--  
+
+
+ 
+<div *ngFor="let member of members">
+    {{ member.nom }} - {{ member.prenom }}
+    <button (click)="deleteMemeber(member.id)">Supprimer</button>
+    <a [routerLink]="['/member', member.id]">Détails</a>
+  </div>
+   -->
+
+
+<div class="tab">
+  <p style="text-align: center;">add new member
+    <button   type="button" class="btn btn-info">Ajouter</button>
+   </p>
+ 
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nom</th>
+        <th scope="col">prenom</th>
+        <th scope="col">image</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let member of members; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td> {{ member.nom }}</td>
+        <td> {{ member.prenom }}</td>
+        <td> {{ member.imageUrl }}</td>
+        <td> <button  (click)="deleteMemeber(member.id)" type="button" class="btn btn-danger">delete</button>   
+          &nbsp; 
+        <button [routerLink]="['/member', member.id]" type="button" class="btn btn-info">detail</button> </td>
+      </tr>
+       
+    </tbody>
+  </table>
+
+</div>
+ 
