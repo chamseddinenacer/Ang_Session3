@@ -1,22 +1,73 @@
-<!--  
+ 
 
+  <form style="width: 50%;">
+    <div class="row">
+      <div class="col">
+        <label for="nom">Nom:</label>
+        <input type="text" class="form-control" placeholder="First name" 
+        [(ngModel)]="newMember.nom" required>
+      </div>
+      <div class="col">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" placeholder="Last name"
+        [(ngModel)]="newMember.prenom" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" placeholder="First name"
+        [(ngModel)]="newMember.prenom" required>
+      </div>
+      <div class="col">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+    </div>
+
+   <br>
+    <button   type="button" class="btn btn-info">Ajouter Member</button>
+  </form>
+   
+  
+  
+  
+ 
 
  
-<div *ngFor="let member of members">
-    {{ member.nom }} - {{ member.prenom }}
-    <button (click)="deleteMemeber(member.id)">Supprimer</button>
-    <a [routerLink]="['/member', member.id]">Détails</a>
-  </div>
-   -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="tab">
-  <p style="text-align: center;">add new member
+  <!-- <p style="text-align: center;">add new member
     <button   type="button" class="btn btn-info">Ajouter</button>
-   </p>
+   </p> -->
  
-  <table class="table">
-    <thead class="thead-dark">
+   <table class="table table-bordered">
+    <thead class="table-secondary">
       <tr>
         <th scope="col">#</th>
         <th scope="col">nom</th>

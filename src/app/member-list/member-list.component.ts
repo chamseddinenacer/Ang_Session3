@@ -8,6 +8,7 @@ import { MemberService } from '../services/member.service';
 })
 export class MemberListComponent implements OnInit {
   members: any[] = [];
+  newMember: any = {};
 
   constructor(private membersService:MemberService) {}
 
@@ -19,4 +20,12 @@ export class MemberListComponent implements OnInit {
     this.membersService.deleteMemeber(id);
     this.members = this.membersService.getMemebers();  
   }
+
+
+  addEtudiant() {
+    this.membersService.addMemeber(this.newMember);
+    this.newMember = {}; 
+    this.members = this.membersService.getMemebers();  
+  }
+
 }

@@ -2,13 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MemberListComponent } from './member-list/member-list.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { AddMemeberComponent } from './add-memeber/add-memeber.component';
+import { HomeComponent } from './home/home.component';
 
 
 
 const routes: Routes = [
-  { path: 'members', component: MemberListComponent },
+
+  { path: 'home', component: HomeComponent },
+  { path: 'membersList', component: MemberListComponent },
+  { path: 'MemberAdd', component: AddMemeberComponent },
   { path: 'members/:id', component: MemberDetailComponent },
-  { path: '', redirectTo: '/members', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
 ];
 
 @NgModule({
