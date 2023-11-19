@@ -9,15 +9,15 @@ export class MemberService {
 
 
   private members: any[] = [
-    { id: 1, nom: 'chamseddine', prenom: 'nacer',role:'responsable dev',imageUrl: '' },
-    { id: 2, nom: 'cherif', prenom: 'khalifa' ,role:'responsable iot',imageUrl: '  '},
-    { id: 3, nom: 'fadwa', prenom: 'fadwa' ,role:'presidente',imageUrl: ''},
-    { id: 4, nom: 'hazar', prenom: 'hazar' ,role:'Secrétaire général',imageUrl: ''},
-    { id: 5, nom: 'ghofran', prenom: 'ghofran' ,role:'finances',imageUrl: ''},
-    { id: 6, nom: 'ranya', prenom: 'ranya' ,role:'member actif',imageUrl: ''},
-    { id: 7, nom: 'minyar', prenom: 'minyar' ,role:'member actif',imageUrl: ''},
-    { id: 8, nom: 'sarra', prenom: 'sarra' ,role:'member actif',imageUrl: ''},
-    { id: 9, nom: 'hela', prenom: 'hela' ,role:'member actif',imageUrl: ''},
+    { id: 1, firstname: 'chamseddine', lastname: 'nacer',role:'responsable dev',phone:29225523,email:'chams@gmail.com',imageUrl: 'https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png' },
+    { id: 2, firstname: 'cherif', lastname: 'khalifa' ,role:'responsable iot',phone:29225523,email:'cherif@gmail.com',imageUrl: 'https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png'},
+    { id: 3, firstname: 'fadwa', lastname: 'fadwa' ,role:'presidente',phone:29225523,email:'fadwa@gmail.com',imageUrl: 'https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png'},
+    { id: 4, firstname: 'hazar', lastname: 'hazar' ,role:'Secrétaire général',phone:29225523,email:'hazar@gmail.com',imageUrl: 'https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png'},
+    { id: 5, firstname: 'ghofran', lastname: 'ghofran' ,role:'finances',phone:29225523,email:'ghofran@gmail.com',imageUrl: 'https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png'},
+    { id: 6, firstname: 'ranya', lastname: 'ranya' ,role:'member actif',phone:29225523,email:'ranya@gmail.com',imageUrl: 'https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png'},
+    { id: 7, firstname: 'minyar', lastname: 'minyar' ,role:'member actif',phone:29225523,email:'minyar@gmail.com',imageUrl: 'https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png'},
+    { id: 8, firstname: 'sarra', lastname: 'sarra' ,role:'member actif',phone:29225523,email:'sarra@gmail.com',imageUrl: 'https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png'},
+    { id: 9, firstname: 'hela', lastname: 'hela' ,role:'member actif',phone:29225523,email:'hela@gmail.com',imageUrl: 'https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png'},
     
  
   ];
@@ -31,6 +31,7 @@ export class MemberService {
   }
 
   addMemeber(member: any) {
+    member.id = this.members.length + 1;  
     this.members.push(member);
   }
 

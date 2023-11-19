@@ -22,10 +22,19 @@ export class MemberListComponent implements OnInit {
   }
 
 
-  addEtudiant() {
-    this.membersService.addMemeber(this.newMember);
-    this.newMember = {}; 
-    this.members = this.membersService.getMemebers();  
+  addMemeber():void {
+
+if(this.newMember){
+
+  this.membersService.addMemeber(this.newMember);
+  this.newMember = {}; 
+  this.members = this.membersService.getMemebers();  
+  console.log("dsdsdsdsddsd")
+}
+else{
+  console.log("leeeeeeeeeeeeeeeee")
+}
+
   }
 
 }
