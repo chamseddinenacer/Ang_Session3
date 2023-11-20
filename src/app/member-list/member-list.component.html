@@ -79,7 +79,7 @@
     </div>
 
    <br>
-    <button   type="submit" class="btn btn-info">Ajouter Member</button>
+    <button style="margin-left: 40%;"  type="submit" class="btn btn-info">Ajouter Member</button>
   </form>
    
   
@@ -88,14 +88,7 @@
  
 
  
-
-
-
-
-
-
-
-
+ 
 
 
 
@@ -113,6 +106,7 @@
         <th scope="col">Last Name</th>
         <th scope="col">Phone</th>
         <th scope="col">Email</th>
+        <th scope="col">Role</th>
         <th scope="col">Image</th>
         <th scope="col">action</th>
       </tr>
@@ -124,6 +118,7 @@
         <td> {{ member.lastname }}</td>
         <td> {{ member.phone }}</td>
         <td> {{ member.email }}</td>
+        <td> {{ member.role }}</td>
         <td> <img [src]="member.imageUrl" width="55px" height="50px"  > </td>
         <td> <button  (click)="deleteMemeber(member.id)" type="button" class="btn btn-danger">delete</button>   
           &nbsp; 
