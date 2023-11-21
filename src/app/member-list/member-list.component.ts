@@ -27,7 +27,7 @@ export class MemberListComponent implements OnInit {
 if(this.newMember){
 
   this.membersService.addMemeber(this.newMember);
-  this.newMember = {}; 
+  // this.newMember = {}; 
   this.members = this.membersService.getMemebers();  
   console.log("dsdsdsdsddsd")
 }

@@ -48,21 +48,31 @@
 
 
       </div>
-      <div class="col">
-        <label for="prenom">Role:</label>
-        <input type="text" class="form-control" placeholder="Role"
-        [(ngModel)]="newMember.role" [ngModelOptions]="{standalone: true}" required
-        #role="ngModel">
 
-        <div style="color: red;" class="alert-danger" *ngIf="role.errors && f.submitted">
-          <div *ngIf="role.errors?.['required']">role is required</div>
+
+      <div class="col">
+        <label for="prenom">Email:</label>
+        <input type="text" class="form-control" placeholder="imageUrl"
+        [(ngModel)]="newMember.email" [ngModelOptions]="{standalone: true}" required
+        #email="ngModel">
+
+        <div style="color: red;" class="alert-danger" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors?.['required']">email is required</div>
         </div>
 
 
       </div>
+
+
+
+      
     </div>
 
     <div class="row">
+
+   
+     
+
       <div class="col">
         <label for="prenom">imageUrl:</label>
         <input type="text" class="form-control" placeholder="imageUrl"
@@ -73,6 +83,36 @@
           <div *ngIf="imageUrl.errors?.['required']">imageUrl is required</div>
         </div>
 
+
+      </div>
+
+      <div class="col">
+        <label for="prenom">Role:</label>
+        <!-- <input type="text" class="form-control" placeholder="Role"
+        [(ngModel)]="newMember.role" [ngModelOptions]="{standalone: true}" required
+        #role="ngModel"> -->
+
+     
+
+
+        <select class="form-control"  
+        [(ngModel)]="newMember.role" [ngModelOptions]="{standalone: true}" required
+        #role="ngModel">
+            <option selected>select role</option>
+            <option>Prisedent</option>
+            <option>Secretaire gn</option>
+            <option>Marketing</option>
+            <option>Finances</option>
+            <option>Responsable iot </option>
+            <option>Responsable dev </option>
+            <option>Member actif</option>
+            <option>Member</option>
+
+        </select>
+
+        <div style="color: red;" class="alert-danger" *ngIf="role.errors && f.submitted">
+          <div *ngIf="role.errors?.['required']">role is required</div>
+        </div>
 
       </div>
     
@@ -95,38 +135,46 @@
 
 
 
-<div class="tab">
- 
- 
-   <table class="table table-bordered">
-    <thead class="table-secondary">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Email</th>
-        <th scope="col">Role</th>
-        <th scope="col">Image</th>
-        <th scope="col">action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let member of members; let i = index">
-        <th scope="row">{{ i + 1 }}</th>
-        <td> {{ member.firstname }}</td>
-        <td> {{ member.lastname }}</td>
-        <td> {{ member.phone }}</td>
-        <td> {{ member.email }}</td>
-        <td> {{ member.role }}</td>
-        <td> <img [src]="member.imageUrl" width="55px" height="50px"  > </td>
-        <td> <button  (click)="deleteMemeber(member.id)" type="button" class="btn btn-danger">delete</button>   
-          &nbsp; 
-        <button [routerLink]="['/member', member.id]" type="button" class="btn btn-info">detail</button> </td>
-      </tr>
-       
-    </tbody>
-  </table>
 
-</div>
+
+  <div class="tab">
+ 
+ 
+    <table class="table table-bordered">
+     <thead class="table-secondary">
+       <tr>
+         <th scope="col">#</th>
+         <th scope="col">Image</th>
+         <th scope="col">First Name</th>
+         <th scope="col">Last Name</th>
+         <th scope="col">Phone</th>
+         <th scope="col">Email</th>
+         <th scope="col">Role</th>
+        
+         <th scope="col">action</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let member of members; let i = index">
+         <th scope="row">{{ i + 1 }}</th>
+         <td> <img [src]="member.imageUrl" width="55px" height="50px"  > </td>
+         <td style="color: red;"> {{ member.firstname }}</td>
+         <td> {{ member.lastname }}</td>
+         <td style="color: red;"> {{ member.phone }}</td>
+         <td> {{ member.email }}</td>
+         <td style="color: red;"> {{ member.role }}</td>
+         <td> 
+        
+         <button [routerLink]="['/member', member.id]" type="button" class="btn btn-info">detail</button> 
+         &nbsp; 
+     
+          <button  (click)="deleteMemeber(member.id)" type="button" class="btn btn-danger">delete</button>   
+         </td>
+        </tr>
+        
+     </tbody>
+   </table>
+  
+  </div>
+  
  

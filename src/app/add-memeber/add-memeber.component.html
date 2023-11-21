@@ -48,6 +48,46 @@
 
 
       </div>
+     
+
+
+      
+      <div class="col">
+        <label for="prenom">Email:</label>
+        <input type="text" class="form-control" placeholder="imageUrl"
+        [(ngModel)]="newMember.email" [ngModelOptions]="{standalone: true}" required
+        #email="ngModel">
+
+        <div style="color: red;" class="alert-danger" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors?.['required']">email is required</div>
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+    <div class="row">
+
+ 
+      <div class="col">
+        <label for="prenom">imageUrl:</label>
+        <input type="text" class="form-control" placeholder="imageUrl"
+        [(ngModel)]="newMember.imageUrl" [ngModelOptions]="{standalone: true}" required
+        #imageUrl="ngModel">
+
+        <div style="color: red;" class="alert-danger" *ngIf="imageUrl.errors && f.submitted">
+          <div *ngIf="imageUrl.errors?.['required']">imageUrl is required</div>
+        </div>
+
+
+      </div>
+
+
       <div class="col">
         <label for="prenom">Role:</label>
         <!-- <input type="text" class="form-control" placeholder="Role"
@@ -57,7 +97,7 @@
         <select class="form-control"  
         [(ngModel)]="newMember.role" [ngModelOptions]="{standalone: true}" required
         #role="ngModel">
-            <option selected>select role</option>
+          
             <option>Prisedent</option>
             <option>Secretaire gn</option>
             <option>Marketing</option>
@@ -71,21 +111,6 @@
 
         <div style="color: red;" class="alert-danger" *ngIf="role.errors && f.submitted">
           <div *ngIf="role.errors?.['required']">role is required</div>
-        </div>
-
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <label for="prenom">imageUrl:</label>
-        <input type="text" class="form-control" placeholder="imageUrl"
-        [(ngModel)]="newMember.imageUrl" [ngModelOptions]="{standalone: true}" required
-        #imageUrl="ngModel">
-
-        <div style="color: red;" class="alert-danger" *ngIf="imageUrl.errors && f.submitted">
-          <div *ngIf="imageUrl.errors?.['required']">imageUrl is required</div>
         </div>
 
 
