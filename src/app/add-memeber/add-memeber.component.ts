@@ -19,18 +19,16 @@ export class AddMemeberComponent implements OnInit {
 
   addMemeber():void {
 
-    if(this.newMember){
+     
     
       this.membersService.addMemeber(this.newMember);
       this.newMember = {}; 
       this.members = this.membersService.getMemebers();  
-      console.log("dsdsdsdsddsd")
+      
 
      this.router.navigate(['/membersList']);
-    }
-    else{
-      console.log("leeeeeeeeeeeeeeeee")
-    }
+   
+   
     
       }
 

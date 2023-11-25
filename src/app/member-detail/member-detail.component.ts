@@ -1,10 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MemberService } from '../services/member.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-member-detail',
   templateUrl: './member-detail.component.html',
   styleUrls: ['./member-detail.component.css']
 })
-export class MemberDetailComponent {
-  @Input() member: any;
+export class MemberDetailComponent  implements OnInit{
+ 
+  id: any;
+  member:any;
+ 
+  constructor(private membersService:MemberService,private route: ActivatedRoute,) {}
+
+
+
+  ngOnInit(): void {
+  
+
+      this.id = this.route.snapshot.params['id'];
+ 
+
+      this.member = this.membersService.getMemeberById(this.id);
+
+      console.log(  this.membersService.getMemeberById(this.id))
+
+    
+}
+
 }

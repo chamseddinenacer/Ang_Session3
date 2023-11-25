@@ -63,7 +63,11 @@
 
 
 <div class="tab">
- 
+
+  <div class="alert alert-danger" role="alert" style="text-align: center; "
+  *ngIf="isdelete">
+  Member a bien été supprimé.
+  </div>
  
   <table class="table table-bordered">
    <thead class="table-secondary">
@@ -90,7 +94,7 @@
        <td style="color: red;"> {{ member.role }}</td>
        <td> 
       
-       <button [routerLink]="['/member', member.id]" type="button" class="btn btn-info">detail</button> 
+       <button (click)="showMemberDetail(member.id)" type="button" class="btn btn-info">detail</button> 
        &nbsp; 
    
         <button  (click)="deleteMemeber(member.id)" type="button" class="btn btn-danger">delete</button>   
@@ -99,6 +103,9 @@
       
    </tbody>
  </table>
+
+ 
+
 
 </div>
 

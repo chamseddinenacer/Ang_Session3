@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../services/member.service';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-member-list',
@@ -9,6 +10,8 @@ import { MemberService } from '../services/member.service';
 export class MemberListComponent implements OnInit {
   members: any[] = [];
   newMember: any = {};
+
+  isadd=false;
 
   constructor(private membersService:MemberService) {}
 
@@ -30,6 +33,16 @@ if(this.newMember){
   // this.newMember = {}; 
   this.members = this.membersService.getMemebers();  
   console.log("dsdsdsdsddsd")
+
+  this.isadd=true;
+
+  
+
+ setTimeout(() => {
+  this.isadd = false;
+}, 2000);
+
+
 }
 else{
   console.log("leeeeeeeeeeeeeeeee")

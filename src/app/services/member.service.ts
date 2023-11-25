@@ -27,7 +27,7 @@ export class MemberService {
   }
 
   getMemeberById(id: number) {
-    return this.members.find(member => member.id === id);
+    return this.members.find(member => member.id == id);
   }
 
   addMemeber(member: any) {

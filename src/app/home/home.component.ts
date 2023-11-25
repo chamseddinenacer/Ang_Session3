@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../services/member.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import { MemberService } from '../services/member.service';
 })
 export class HomeComponent implements OnInit {
   members: any[] = [];
-  newMember: any = {};
 
-  constructor(private membersService:MemberService) {}
+  detailmembers: any;
+
+  newMember: any = {};
+  isdelete=false;
+
+  constructor(private membersService:MemberService,private router: Router) {}
 
   ngOnInit() {
     this.members = this.membersService.getMemebers();
@@ -19,6 +24,12 @@ export class HomeComponent implements OnInit {
   deleteMemeber(id: number) {
     this.membersService.deleteMemeber(id);
     this.members = this.membersService.getMemebers();  
+    this.isdelete=true
+
+    setTimeout(() => {
+      this.isdelete = false;
+    }, 2000);
+
   }
 
 
@@ -29,12 +40,18 @@ if(this.newMember){
   this.membersService.addMemeber(this.newMember);
   this.newMember = {}; 
   this.members = this.membersService.getMemebers();  
-  console.log("dsdsdsdsddsd")
+  console.log("ADD")
 }
 else{
-  console.log("leeeeeeeeeeeeeeeee")
+  console.log("NN")
 }
 
   }
+
+
+  showMemberDetail(memberid: any) {
+    this.router.navigate(['/member', memberid]);
+  }
+
 
 }
