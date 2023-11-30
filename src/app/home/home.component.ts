@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteMemeber(id: number) {
-    this.membersService.deleteMemeber(id);
+    this.membersService.deleteMember(id);
     this.members = this.membersService.getMemebers();  
     this.isdelete=true
 
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
 
 if(this.newMember){
 
-  this.membersService.addMemeber(this.newMember);
+  this.membersService.addMember(this.newMember);
   this.newMember = {}; 
   this.members = this.membersService.getMemebers();  
   console.log("ADD")

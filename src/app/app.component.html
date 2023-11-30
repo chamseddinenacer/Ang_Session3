@@ -1,7 +1,11 @@
  
  
- <app-navbar></app-navbar>
- 
+
+
+<div  *ngIf="router?.url != '/login' ">
+    <app-navbar></app-navbar>
+</div>
+
  <router-outlet></router-outlet>
 
  <app-footer></app-footer>

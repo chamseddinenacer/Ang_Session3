@@ -12,6 +12,7 @@ import { AddMemeberComponent } from './add-memeber/add-memeber.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     AddMemeberComponent,
     AboutComponent,
-    ContactsComponent
+    ContactsComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,

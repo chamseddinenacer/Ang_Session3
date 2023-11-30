@@ -17,20 +17,70 @@ export class AddMemeberComponent implements OnInit {
     // this.members = this.membersService.getMemebers();
   }
 
-  addMemeber():void {
+
+  
+  addMember():void {
+    
+
+
+    if(
+
+        this.newMember.firstname &&
+        this.newMember.lastname &&
+        this.newMember.phone&& 
+        this.newMember.email &&
+        this.newMember.imageUrl &&
+        this.newMember.role 
+       
+       )
+       
+       {
+
+
+      this.membersService.addMember(this.newMember);
+      // this.newMember = {}; 
+      this.members = this.membersService.getMemebers();  
+      console.log("dsdsdsdsddsd")
+    
+      // this.isadd=true;
+
+      this.router.navigate(['/membersList']);
+    
+      
+    
+    //  setTimeout(() => {
+    //   this.isadd = false;
+    // }, 2000);
+
+    }
+
+
+    else{
+      console.log("leeeeeeeeeeee")
+    }
+ 
+
+ 
+
+  }
+
+
+
+
+  // addMemeber():void {
 
      
     
-      this.membersService.addMemeber(this.newMember);
-      this.newMember = {}; 
-      this.members = this.membersService.getMemebers();  
+  //     this.membersService.addMember(this.newMember);
+  //     this.newMember = {}; 
+  //     this.members = this.membersService.getMemebers();  
       
 
-     this.router.navigate(['/membersList']);
+  //    this.router.navigate(['/membersList']);
    
    
     
-      }
+  //     }
 
 
 }

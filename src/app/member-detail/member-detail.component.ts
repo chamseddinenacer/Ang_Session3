@@ -22,9 +22,9 @@ export class MemberDetailComponent  implements OnInit{
       this.id = this.route.snapshot.params['id'];
  
 
-      this.member = this.membersService.getMemeberById(this.id);
+      this.member = this.membersService.getMemberById(this.id);
 
-      console.log(  this.membersService.getMemeberById(this.id))
+      console.log(  this.membersService.getMemberById(this.id))
 
     
 }
