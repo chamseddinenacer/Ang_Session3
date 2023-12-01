@@ -14,12 +14,40 @@ export class HomeComponent implements OnInit {
 
   newMember: any = {};
   isdelete=false;
+  nb: any;
+
+  
 
   constructor(private membersService:MemberService,private router: Router) {}
 
   ngOnInit() {
-    this.members = this.membersService.getMemebers();
+
+     this.members = this.membersService.getMemebers();
+
+      this.membersService.searchQuery$.subscribe(query => {
+       
+      this.members = this.filterMembers(query);
+
+      this.nb = this.members.length
+
+
+    });
+
   }
+
+  
+  filterMembers(query: string): any[] {
+    
+    if (!this.members) {
+      return [];
+    }
+
+    
+    return this.members.filter(member =>
+      member && member.firstname && member.firstname.toLowerCase().includes(query.toLowerCase())
+    );
+  }
+
 
   deleteMemeber(id: number) {
     this.membersService.deleteMember(id);
@@ -52,6 +80,18 @@ else{
   showMemberDetail(memberid: any) {
     this.router.navigate(['/member', memberid]);
   }
+
+
+
+  updateMember(member: any): void {
+    
+    console.log('Mise à jour du membre:', member);
+    // Vous pouvez appeler un service de mise à jour, afficher un formulaire de mise à jour, etc.
+  }
+
+
+  
+
 
 
 }

@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
-import { retry } from 'rxjs';
+ 
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemberService {
+
+
+  private searchQuerySubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  public searchQuery$: Observable<string> = this.searchQuerySubject.asObservable();
+
+
 
   constructor() { }
 
@@ -52,18 +59,22 @@ addMember(member: any) {
   }
 
 
+
+  setSearchQuery(query: string): void {
+    this.searchQuerySubject.next(query);
+  }
   
 
 
 
 
 
-  // updateMemeber(member: any) {
-  //   const index = this.members.findIndex(e => e.id === member.id);
-  //   if (index !== -1) {
-  //     this.members[index] = member;
-  //   }
-  // }
+  updateMemeber(member: any) {
+    const index = this.members.findIndex(e => e.id === member.id);
+    if (index !== -1) {
+      this.members[index] = member;
+    }
+  }
 
 
 

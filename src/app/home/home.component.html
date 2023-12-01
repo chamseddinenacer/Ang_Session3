@@ -51,7 +51,7 @@
 
 <div  style=" text-align: center; margin-top: 10%; ">
 
-    <h1>Liste des membres </h1>
+    <h1>Liste des membres : {{this.nb }}</h1>
  
 </div>
 
@@ -84,7 +84,8 @@
      </tr>
    </thead>
    <tbody>
-     <tr *ngFor="let member of members; let i = index">
+     <!-- <tr *ngFor="let member of members; let i = index"> -->
+      <tr *ngFor="let member of members; let i = index">
        <th scope="row">{{ i + 1 }}</th>
        <td> <img [src]="member.imageUrl" width="55px" height="50px"  > </td>
        <td style="color: red;"> {{ member.firstname }}</td>
@@ -95,10 +96,16 @@
        <td> 
       
        <button (click)="showMemberDetail(member.id)" type="button" class="btn btn-info">detail</button> 
+     
        &nbsp; 
    
         <button  (click)="deleteMemeber(member.id)" type="button" class="btn btn-danger">delete</button>   
-       </td>
+       
+        &nbsp; 
+
+        <button  (click)="updateMember(member)" type="button" class="btn btn-warning">update</button>   
+      
+      </td>
       </tr>
       
    </tbody>
