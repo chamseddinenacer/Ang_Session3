@@ -49,7 +49,7 @@ getmembbyid(memberid:any){
 }
   
 addMember(member: any) {
-    member.id = this.members.length + 1;  
+   
     this.members.push(member);
   }
 

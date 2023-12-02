@@ -24,6 +24,12 @@ export class HomeComponent implements OnInit {
 
      this.members = this.membersService.getMemebers();
 
+     
+
+     console.log( this.members)
+
+
+      //rec
       this.membersService.searchQuery$.subscribe(query => {
        
       this.members = this.filterMembers(query);
@@ -86,8 +92,7 @@ else{
   updateMember(member: any): void {
     
     console.log('Mise à jour du membre:', member);
-    // Vous pouvez appeler un service de mise à jour, afficher un formulaire de mise à jour, etc.
-  }
+   }
 
 
   

@@ -69,8 +69,9 @@ submitted = false;
 
       this.membersService.addMember(this.newMember);
       // this.newMember = {}; 
-      this.members = this.membersService.getMemebers();  
-      console.log("dsdsdsdsddsd")
+      // this.members = this.membersService.getMemebers();  
+
+      // console.log("dsdsdsdsddsd")
     
       this.isadd=true;
     

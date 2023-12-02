@@ -5,11 +5,26 @@
     <div class="col">
       <label for="nom">First name:</label>
       <input type="text" class="form-control" placeholder="First name"
-             [(ngModel)]="newMember.firstname" [ngModelOptions]="{standalone: true}" required
-             #firstname="ngModel">
-      <div style="color: red;" class="alert-danger" *ngIf="f.submitted && firstname.invalid">
-        <div *ngIf="firstname.errors?.['required']">First name is required</div>
+
+
+             [(ngModel)]="newMember.firstname" name="firstname"  #firstname="ngModel"
+             
+             required >
+
+
+
+      <div style="color: red;" class="alert-danger" 
+      *ngIf="f.submitted && firstname.invalid">
+        <div *ngIf="firstname.errors?.['required']">
+          
+          First name is required
+        
+        </div>
       </div>
+
+
+
+
     </div>
 
     <div class="col">
@@ -29,6 +44,8 @@
       <input type="text" class="form-control" placeholder="Phone Number"
              [(ngModel)]="newMember.phone" [ngModelOptions]="{standalone: true}" required
              #phone="ngModel">
+
+
       <div style="color: red;" class="alert-danger" *ngIf="f.submitted && phone.invalid">
         <div *ngIf="phone.errors?.['required']">Phone is required</div>
       </div>
@@ -79,7 +96,8 @@
   <br>
   <button style="margin-left: 40%;" type="submit" class="btn btn-info">Ajouter Member</button>
 
-  <div class="alert alert-success" role="alert" style="text-align: center; margin-top: 5%;" *ngIf="isadd">
+  <div class="alert alert-success" role="alert" style="text-align: center; margin-top: 5%;" 
+  *ngIf="isadd">
     Member a bien été ajouté.
   </div>
 </form>
